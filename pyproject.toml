@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "puzzles"
+version = "0.1.0"
+description = ""
+authors = ["Ricardo Busquet <7198302+rbusquet@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+pytest = "^7.1.0"
+mypy = "^0.941"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
