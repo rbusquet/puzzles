@@ -20,7 +20,7 @@ def capital_after_vowel(text: str) -> str:
 
 def capital_after_vowel_regexp(text: str) -> str:
     def replace(m: re.Match) -> str:
-        return f"{m.group(1)}{m.group(2).upper()}"
+        return f"{m[1]}{m[2].upper()}"
 
     after_vowels = re.compile(
         r"""
@@ -32,6 +32,25 @@ def capital_after_vowel_regexp(text: str) -> str:
             (?![aeiou])  # negative lookahead--exclude vowels
             [a-z]  # match a-z minus vowels
         )  # group 2
+        """,
+        re.VERBOSE,
+    )
+
+    return after_vowels.sub(replace, text)
+
+
+def capital_after_vowel_regexp_v2(text: str) -> str:
+    def replace(m: re.Match) -> str:
+        return m[1].upper()
+
+    after_vowels = re.compile(
+        r"""
+        (?<=[aeiou])  # positive lookbehind: assert matches a vowel before group
+        (
+            \s*  # any whitespace character
+            (?![aeiou])  # negative lookahead--exclude vowels
+            [a-z]  # letters from a to z
+        )  # group 1
         """,
         re.VERBOSE,
     )
