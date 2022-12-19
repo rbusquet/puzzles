@@ -3,17 +3,18 @@ name = "puzzles"
 version = "0.1.0"
 description = ""
 authors = ["Ricardo Busquet <7198302+rbusquet@users.noreply.github.com>"]
+readme = "README.rst"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 
-[tool.poetry.dev-dependencies]
-black = "^22.1.0"
-flake8 = "^4.0.1"
-isort = "^5.10.1"
-pytest = "^7.1.0"
-mypy = "^0.941"
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+flake8 = "^6.0.0"
+isort = "^5.11.3"
+pytest = "^7.2.0"
+mypy = "^0.991"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

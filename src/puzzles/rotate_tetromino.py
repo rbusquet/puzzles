@@ -1,5 +1,4 @@
 from typing import Literal, TypeVar
-from math import cos, sin
 
 
 T = TypeVar("T")
