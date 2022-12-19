@@ -4,6 +4,13 @@ from typing import Iterator
 
 
 def capital_after_vowel(text: str) -> str:
+    """
+    >>> capital_after_vowel("hello world")
+    'heLlo WoRld'
+    >>> capital_after_vowel("xaabeuekadii")
+    'xaaBeueKaDii'
+    """
+
     def iterator(word: str) -> Iterator[str]:
         capitalize = False
         for letter in word:
@@ -19,6 +26,13 @@ def capital_after_vowel(text: str) -> str:
 
 
 def capital_after_vowel_regexp(text: str) -> str:
+    """
+    >>> capital_after_vowel_regexp("hello world")
+    'heLlo WoRld'
+    >>> capital_after_vowel_regexp("xaabeuekadii")
+    'xaaBeueKaDii'
+    """
+
     def replace(m: re.Match) -> str:
         return f"{m[1]}{m[2].upper()}"
 
@@ -40,6 +54,13 @@ def capital_after_vowel_regexp(text: str) -> str:
 
 
 def capital_after_vowel_regexp_v2(text: str) -> str:
+    """
+    >>> capital_after_vowel_regexp_v2("hello world")
+    'heLlo WoRld'
+    >>> capital_after_vowel_regexp_v2("xaabeuekadii")
+    'xaaBeueKaDii'
+    """
+
     def replace(m: re.Match) -> str:
         return m[1].upper()
 
