@@ -1,12 +1,12 @@
 import pytest
 
-from puzzles import __version__
-from puzzles.capital_after_vowel import (
+from puzzles_py import __version__
+from puzzles_py.capital_after_vowel import (
     capital_after_vowel,
     capital_after_vowel_regexp,
     capital_after_vowel_regexp_v2,
 )
-from puzzles.rotate_tetromino import rotate_tetromino
+from puzzles_py.rotate_tetromino import rotate_tetromino
 
 
 def test_version():
